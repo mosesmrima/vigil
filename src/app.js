@@ -2,10 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const incidentsRouter = require('./routes/incidents');
 
-const dbUrl = 'mongodb://127.0.0.1:27017/test1';
+const dbUrl = 'mongodb://127.0.0.1:27017/test';
 const app = express();
 
+app.use(express.json())
 app.use('/api/incidents', incidentsRouter);
+
 mongoose.connect(dbUrl)
   .then(() => console.log('Succesfully connected to DB'))
   .catch(err => console.log(`Could not connect due to: ${err}`));
