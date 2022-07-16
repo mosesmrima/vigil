@@ -1,5 +1,5 @@
-const {Schema} = require("mongoose");
-const mongoose = require("mongoose");
+const {Schema, model} = require("mongoose");
+
 
 const incidentSchema = new Schema({
     id: {
@@ -21,5 +21,5 @@ const incidentSchema = new Schema({
     }
 });
 
-const Incident = mongoose.model("Incidents", incidentSchema);
+const Incident = model("Incidents", incidentSchema);
 module.exports = Incident;
